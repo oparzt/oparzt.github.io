@@ -1,0 +1,138 @@
+@import './_reset';
+@import './_header';
+@import './_footer';
+
+$window-container-width: 1920px;
+$main-color: #000000;
+$main-bg-color: #FFFFFF;
+
+@mixin transformFontToVW($font-size, $line-height) {
+  font-size: calc($font-size / $window-container-width * 100vw);
+  line-height: calc($line-height / $window-container-width * 100vw);
+}
+
+@function transformToVW($size) {
+  @return calc($size / $window-container-width * 100vw);
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  position: relative;
+  background: $main-bg-color;
+  min-height: 100vh;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+
+  padding: transformToVW(140px) transformToVW(330px);
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+
+  &__header {
+    @include transformFontToVW(40px, 49px);
+    color: $main-color;
+    width: transformToVW(870px);
+    margin-bottom: transformToVW(49px);
+    margin-top: transformToVW(105px);
+  }
+
+  &__img-cont {
+    position: relative;
+    width: 100%;
+    height: transformToVW(105px);
+    z-index: -1;
+  }
+
+  &__red-line {
+    position: absolute;
+    top: 0;
+    left: transformToVW(185px);
+    width: transformToVW(732.5px);
+    height: transformToVW(164.5px);
+  }
+
+  &__yellow-line {
+    position: absolute;
+    top: transformToVW(-15px);
+    left: transformToVW(635px);
+    width: transformToVW(284.5px);
+    height: transformToVW(228.5px);
+  }
+
+  &__green-line {
+    position: absolute;
+    top: transformToVW(-10px);
+    right: transformToVW(184px);
+    width: transformToVW(149.5px);
+    height: transformToVW(228.5px);
+  }
+
+  &__funnel {
+    position: absolute;
+    bottom: transformToVW(60px);
+    left: transformToVW(800px);
+    width: transformToVW(662px);
+    height: transformToVW(355px);
+    transform-origin: center center;
+    transform: rotate(10deg);
+  }
+
+  &__forks {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: transformToVW(15px);
+    z-index: 20;
+
+    &-link {
+      position: relative;
+      width: transformToVW(371px);
+      color: $main-color;
+      text-decoration: none;
+    }
+
+    &-link-danger::after,
+    &-link-warning::after {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      right: 100%;
+      width: transformToVW(55.99px);
+      height: transformToVW(49px);
+      transform: translate(50%, 50%);
+      background-position: center center;
+      background-size: 100% 100%;
+    }
+
+    &-link-danger::after {
+      background-image: url(./images/danger.svg);
+    }
+
+    &-link-warning::after {
+      background-image: url(./images/warning.svg);
+    }
+
+    &-img {
+      width: transformToVW(371px);
+      height: transformToVW(232px);
+      margin-bottom: transformToVW(30px);
+    }
+
+    &-txt {
+      display: block;
+      width: 100%;
+      text-align: center;
+
+      @include transformFontToVW(22px, 26.82px)
+    }
+  }
+
+}

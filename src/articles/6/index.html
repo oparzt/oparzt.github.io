@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Убежище факторианта - Энергия с пара</title>
+  <link rel="stylesheet" href="./../index.css">
+
+  <style>
+    /* montserrat-600 - latin_cyrillic */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      src: local(''),
+          url('./../../fonts/montserrat-v24-latin_cyrillic-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('./../../fonts/montserrat-v24-latin_cyrillic-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* montserrat-700 - latin_cyrillic */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      src: local(''),
+          url('./../../fonts/montserrat-v24-latin_cyrillic-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('./../../fonts/montserrat-v24-latin_cyrillic-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+  </style>
+</head>
+<body>
+  <h1 class="visually-hidden">Энергия с пара</h1>
+
+  <header class="header">
+    <a class="header__home-link" href="./../../">
+      <img class="header__logo" src="./../../images/logo.svg">
+      <span class="header__name">Убежище факторианта</span>
+    </a>
+
+    <div class="header__menu">
+      <ul class="header__menu-list">
+        <li class="header__menu-list-item">
+          <a class="header__menu-list-link" href="./../../forks/">
+            <span>Развилки</span>
+          </a>
+        </li>
+        <li class="header__menu-list-item">
+          <a class="header__menu-list-link" href="./../../guides/">
+            <span>Гайды</span>
+          </a>
+        </li>
+        <li class="header__menu-list-item">
+          <a class="header__menu-list-link" href="./../../glossary/">
+            <span>Глоссарий</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="header__menu-lang">
+        Русский
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__header">
+      <div class="main__header-cont">
+        <h2 class="main__header-text">Энергия с пара</h2>
+        <button class="main__header-arrow" onclick="window.history.back()" type="button"></button>
+      </div>
+    </div>
+
+    <p>
+      Энергия с пара
+    </p>
+
+    <ul>
+      <li>
+        Паровой двигатель — простейший генератор электроэнергии, 
+        доступный игроку в самом начале игры. Он генерирует электроэнергию, потребляя пар, 
+        производимый из воды, выкачиваемой погружным насосом и разогретой до 165°C в бойлере.
+      </li>
+      <li>
+        Доставку же электроэнергии совершают линии электропередач
+      </li>
+      <li>
+        Насос обеспечивает 1200 воды в секунду.
+      </li>
+      <li>
+        Бойлер может преобразовать до 60 единиц воды в пар в секунду, обеспечивая 1,8 МВт пара (при 165 ° С).
+      </li>
+      <li>
+        Бойлер потребляет топливо с КПД 50%, используя 1,8 МВт * 2 = 3,6 МВт.
+      </li>
+      <li>
+        Паровой двигатель может превращать до 0,9 МВ пар в электрическую энергию (30 пара при 165 °С).
+      </li>
+      <li>
+        40 паровых двигателей обеспечивают мощность 36 МВт.
+      </li>
+      <li>
+        Электроэнергия необходима, чтобы питать электрическую дрель, четыре типа манипулятора, аккумулятор, 
+        лабораторию, турели, лампу, радар, маяк и электрическую печь.
+      </li>
+    </ul>
+
+    <p>
+      Постоянно подносить уголь к печам и бурам не практично, поэтому самое время наладить электричество и сменить питание углём на энергию.
+    </p>
+
+    <p>
+      В обращении с собой, электрические механизмы гораздо удобнее. 
+      Так как не будет нужно заправлять каждый механизм отдельно, необходимо будет питать только генератор.
+    </p>
+
+    <p>
+      Производят электроэнергию паровые двигатели, которым необходимы бойлеры для того, чтобы превращать воду в пар.
+    </p>
+
+    <div class="main__img-cont">
+      <img src="./../../images/articles/6/1.png" alt="Паровой двигатель и бойлер">
+    </div>
+
+    <p>
+      Схема подключения:
+    </p>
+
+    <p>
+      Насос → Труба → Бойлер → Паровой двигатель → ЛЭП
+    </p>
+
+    <p>
+      Чтобы наша станция по выработке электричества постоянно работала, нам нужно провести к ней уголь.
+    </p>
+
+    <div class="main__img-cont">
+      <img src="./../../images/articles/6/2.png" alt="Поставка топлива к бойлерам">
+    </div>
+
+    <p>
+      Чтобы передавать электричество в нужные части карты, используются ЛЭП.
+    </p>
+
+    <div class="main__img-cont">
+      <img src="./../../images/articles/6/3.png" alt="Паровой двигатель, подключенный к ЛЭП">
+    </div>
+
+    <div class="main__footer">
+      <button class="main__footer-arrow" onclick="window.history.back()" type="button"></button>
+
+      <div class="main__footer-cont">
+        <a class="main__footer-cont-link main__footer-cont-link_good" href="./../8/">Электрические буры и манипуляторы</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a class="footer__home-link" href="./../../">
+      <img class="footer__logo" src="./../../images/logo.svg">
+      <span class="footer__name">Убежище факторианта</span>
+    </a>
+
+    <div class="footer__menu">
+      <ul class="footer__menu-list">
+        <li class="footer__menu-list-item">
+          <a class="footer__menu-list-link" href="./">
+            <span>Создатели</span>
+          </a>
+        </li>
+        <li class="footer__menu-list-item">
+          <a class="footer__menu-list-link" href="./">
+            <span>Форма обратной связи</span>
+          </a>
+        </li>
+        <li class="footer__menu-list-item">
+          <a class="footer__menu-list-link" href="./">
+            <span>Русский</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

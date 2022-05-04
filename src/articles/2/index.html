@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Убежище факторианта - Основы управления</title>
+  <link rel="stylesheet" href="./../index.css">
+
+  <style>
+    /* montserrat-600 - latin_cyrillic */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 600;
+      src: local(''),
+          url('./../../fonts/montserrat-v24-latin_cyrillic-600.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('./../../fonts/montserrat-v24-latin_cyrillic-600.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+    /* montserrat-700 - latin_cyrillic */
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 700;
+      src: local(''),
+          url('./../../fonts/montserrat-v24-latin_cyrillic-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('./../../fonts/montserrat-v24-latin_cyrillic-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+  </style>
+</head>
+<body>
+  <h1 class="visually-hidden">Основы управления</h1>
+
+  <header class="header">
+    <a class="header__home-link" href="./../../">
+      <img class="header__logo" src="./../../images/logo.svg">
+      <span class="header__name">Убежище факторианта</span>
+    </a>
+
+    <div class="header__menu">
+      <ul class="header__menu-list">
+        <li class="header__menu-list-item">
+          <a class="header__menu-list-link" href="./../../forks/">
+            <span>Развилки</span>
+          </a>
+        </li>
+        <li class="header__menu-list-item">
+          <a class="header__menu-list-link" href="./../../guides/">
+            <span>Гайды</span>
+          </a>
+        </li>
+        <li class="header__menu-list-item">
+          <a class="header__menu-list-link" href="./../../glossary/">
+            <span>Глоссарий</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="header__menu-lang">
+        Русский
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__header">
+      <div class="main__header-cont">
+        <h2 class="main__header-text">Основы управления</h2>
+        <button class="main__header-arrow" onclick="window.history.back()" type="button"></button>
+      </div>
+    </div>
+
+    <p>
+      Чтобы не мучить себя и своё драгоценное время, 
+      давайте познакомимся с управлением в игре и уже наконец-то приступим к выживанию.
+    </p>
+
+    <h3 class="main__sub-header">
+      Базовые
+    </h3>
+
+    <ul>
+      <li>Shift + Space – пауза;</li>
+      <li>W – движение вверх;</li>
+      <li>D – движение вправо;</li>
+      <li>A – движение влево;</li>
+      <li>S – движение вниз;</li>
+      <li>ЛКМ – строить;</li>
+      <li>ПКМ – добывать;</li>
+      <li>Ctrl + клик на здании в зоне досягаемости – сбор ресурсов из здания;</li>
+      <li>E – открыть экран персонажа;</li>
+      <li>T – открыть технологический экран;</li>
+      <li>R – повернуть здание (пипетка);</li>
+      <li>P – статистика производства;</li>
+      <li>Alt – включение инфо-режима;</li>
+      <li>Q – очистить предметы «в руке»;</li>
+      <li>Enter – сесть/покинуть транспорт;</li>
+      <li>Shift + ПКМ – копировать производство;</li>
+      <li>Shift + ЛКМ – применить производство.</li>
+    </ul>
+
+    <h3 class="main__sub-header">
+      Инвентарь
+    </h3>
+
+    <ul>
+      <li>ЛКМ – взять предмет;</li>
+      <li>ПКМ на стаке предметов – разделить пополам, можно подержать и пересыпать больше;</li>
+      <li>Shift + ЛКМ – переместить стак;</li>
+      <li>Ctrl + ЛКМ – переместить содержимое инвентаря. Быстрое перемещение предметов из/в устройство.</li>
+    </ul>
+
+    <h3 class="main__sub-header">
+      Производство
+    </h3>
+
+    <ul>
+      <li>ЛКМ – произвести 1;</li>
+      <li>ПКМ – произвести 5;</li>
+      <li>Shift + ЛКМ – произвести всё (нажать следующие сочетания клавиш ещё раз и производство приостановится).</li>
+    </ul>
+
+    <div class="main__footer">
+      <button class="main__footer-arrow" onclick="window.history.back()" type="button"></button>
+
+      <div class="main__footer-cont">
+        <a class="main__footer-cont-link main__footer-cont-link_good" href="./../3/">Физика в игре</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a class="footer__home-link" href="./../../">
+      <img class="footer__logo" src="./../../images/logo.svg">
+      <span class="footer__name">Убежище факторианта</span>
+    </a>
+
+    <div class="footer__menu">
+      <ul class="footer__menu-list">
+        <li class="footer__menu-list-item">
+          <a class="footer__menu-list-link" href="./">
+            <span>Создатели</span>
+          </a>
+        </li>
+        <li class="footer__menu-list-item">
+          <a class="footer__menu-list-link" href="./">
+            <span>Форма обратной связи</span>
+          </a>
+        </li>
+        <li class="footer__menu-list-item">
+          <a class="footer__menu-list-link" href="./">
+            <span>Русский</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

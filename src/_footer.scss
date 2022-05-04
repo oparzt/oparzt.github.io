@@ -1,0 +1,98 @@
+$window-container-width: 1920px;
+$footer-bg-color: #676767;
+$footer-color: #FFFFFF;
+
+@mixin transformFontToVW($font-size, $line-height) {
+  font-size: calc($font-size / $window-container-width * 100vw);
+  line-height: calc($line-height / $window-container-width * 100vw);
+}
+
+@function transformToVW($size) {
+  @return calc($size / $window-container-width * 100vw);
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: transformToVW(100px);
+  padding: 0 transformToVW(330px);
+
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+
+  border-bottom: transformToVW(1px) solid rgba($color: $footer-color, $alpha: 0.25);
+  font-family: 'Montserrat', sans-serif;
+
+  background-color: $footer-bg-color;
+
+  &__home-link,
+  &__menu {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__home-link {
+    color: $footer-color;
+    text-decoration: none;
+  }
+
+  &__logo {
+    width: transformToVW(45px);
+    height: transformToVW(40px);
+    margin-right: transformToVW(23px);
+  }
+
+  &__name {
+    font-weight: 700;
+    @include transformFontToVW(24px, 29px);
+  }
+
+  &__menu {
+    width: transformToVW(710px);
+    font-weight: 600;
+    padding-left: transformToVW(23px);
+    @include transformFontToVW(20px, 24.38px);
+  }
+
+  &__menu-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+
+    &-item {
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      opacity: 0.75;
+      transition: opacity ease-in-out 450ms;
+    }
+
+    &-item:hover {
+      opacity: 1;
+    }
+
+    &-link {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $footer-color;
+      text-decoration: none;
+    }
+  }
+}

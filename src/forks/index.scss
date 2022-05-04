@@ -1,0 +1,185 @@
+@import './../_reset';
+@import './../_header';
+@import './../_footer';
+
+$window-container-width: 1920px;
+$main-color: #000000;
+$main-bg-color: #FFFFFF;
+$orange: #FF811E;
+$danger-color: #C81A1A;
+
+@mixin transformFontToVW($font-size, $line-height) {
+  font-size: calc($font-size / $window-container-width * 100vw);
+  line-height: calc($line-height / $window-container-width * 100vw);
+}
+
+@function transformToVW($size) {
+  @return calc($size / $window-container-width * 100vw);
+}
+
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  position: relative;
+  background: $main-bg-color;
+  min-height: 100vh;
+}
+
+.main {
+  width: 100%;
+  padding: transformToVW(200px) 0 transformToVW(140px);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  @include transformFontToVW(22px, 26.82px);
+
+  
+
+  &__forks-cont {
+    position: relative;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__forks-legend {
+    position: absolute;
+    top: 0;
+    left: transformToVW(330px);
+    width: transformToVW(287px);
+
+    &-item {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: transformToVW(45px);
+
+      img {
+        width: transformToVW(55.99px);
+        height: transformToVW(49px);
+      }
+
+      span {
+        @include transformFontToVW(16px, 19.5px);
+      }
+    }
+
+    &-item::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: transformToVW(80px);
+      width: transformToVW(16px);
+      height: transformToVW(2px);
+      background-color: $main-color;
+    }
+  }
+
+  &__forks-cont::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: transformToVW(8px);
+    height: 100%;
+    border-right: transformToVW(8px) dashed $main-color;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+
+  &__fork {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: transformToVW(76px);
+  }
+
+  &__fork:last-child {
+    margin-bottom: 0;
+  }
+
+  &__fork-link {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    color: $main-color;
+    text-decoration: none;
+    padding: transformToVW(30px) transformToVW(50px);
+    border: transformToVW(6px) dashed $main-color;
+    background-color: $main-bg-color;
+
+    transform: translateX(-50%);
+
+    box-shadow: 0 0 0 rgba($color: #000000, $alpha: 0.5);
+    transition: box-shadow ease-in-out 350ms;
+  }
+
+  &__fork-link:hover {
+    box-shadow: 0 0 1vw rgba($color: #000000, $alpha: 0.5);
+  }
+
+  &__fork-link_static {
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: none;
+  }
+
+  &__fork-link_good {
+    border-color: $orange;
+    box-shadow: 0 0 0vw #FF811E;
+  }
+
+  &__fork-link_good:hover {
+    box-shadow: 0 0 1vw #FF811E;
+  }
+
+  &__fork-link_danger::after,
+  &__fork-link_warning::after,
+  &__fork-link_rocket::after,
+  &__fork-link_science::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    right: 100%;
+    width: transformToVW(55.99px);
+    height: transformToVW(49px);
+    transform: translate(75%, 25%);
+    background-position: center center;
+    background-size: 100% 100%;
+  }
+
+  &__fork-link_rocket::after,
+  &__fork-link_science::after {
+    width: transformToVW(60px);
+    height: transformToVW(60px);
+    right: unset;
+    left: 100%;
+    transform: translate(-35%, 35%);
+  }
+
+  &__fork-link_danger::after {
+    background-image: url(./../images/danger.svg);
+  }
+
+  &__fork-link_warning::after {
+    background-image: url(./../images/warning.svg);
+  }
+
+  &__fork-link_rocket::after {
+    background-image: url(./../images/rocket.png);
+  }
+
+  &__fork-link_science::after {
+    background-image: url(./../images/microscope.png);
+  }
+}
+
