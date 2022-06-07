@@ -7,6 +7,7 @@ const htmlMinify = require('gulp-htmlmin');
 const connect = require('gulp-connect');
 const sass = require('gulp-sass')(require('sass'));
 const closureCompiler = require('gulp-closure-compiler');
+const pug = require('gulp-pug');
 
 const func = {
   buildJS() {
@@ -48,12 +49,15 @@ const func = {
   },
 
   buildHTML() {
-    return src('src/**/*.html')
-      .pipe(htmlMinify({
-        removeComments: true,
-        collapseWhitespace: true
-      }))
+    return src('src/**/index.pug')
+      .pipe(pug({}))
       .pipe(dest('dist/'))
+    // return src('src/**/*.html')
+    //   .pipe(htmlMinify({
+    //     removeComments: true,
+    //     collapseWhitespace: true
+    //   }))
+    //   .pipe(dest('dist/'))
   },
 
   copyImages() {
@@ -129,7 +133,7 @@ function dev() {
 
   watch('src/**/*.js', {delay: 2500}, series(func.buildDevJS));
   watch('src/**/*.scss', {delay: 2500}, series(func.buildCSS));
-  watch('src/**/*.html', {delay: 2500}, series(func.buildHTML));
+  watch('src/**/*.pug', {delay: 2500}, series(func.buildHTML));
   watch('src/images/**/*.*', {delay: 2500}, series(func.copyImages));
 
   connect.server({

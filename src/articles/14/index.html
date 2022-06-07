@@ -33,12 +33,22 @@
   <h1 class="visually-hidden">Каменные блоки и стены</h1>
 
   <header class="header">
+    <input type="checkbox" name="header__check-mob" id="header__check-mob" class="visually-hidden">
+
+    <label class="header__nav-btn" for="header__check-mob">
+      <img class="header__nav-btn-burger-icon" src="./../../images/navbar.svg" alt="Открытие меню навигации">
+    </label>
+
+    <span class="header__cur-page-name">Статьи</span>
+
     <a class="header__home-link" href="./../../">
       <img class="header__logo" src="./../../images/logo.svg">
       <span class="header__name">Убежище факторианта</span>
     </a>
 
     <div class="header__menu">
+      <label class="header__menu-nav-btn" for="header__check-mob"></label>
+
       <ul class="header__menu-list">
         <li class="header__menu-list-item">
           <a class="header__menu-list-link" href="./../../forks/">
@@ -50,16 +60,7 @@
             <span>Гайды</span>
           </a>
         </li>
-        <li class="header__menu-list-item">
-          <a class="header__menu-list-link" href="./../../glossary/">
-            <span>Глоссарий</span>
-          </a>
-        </li>
       </ul>
-
-      <div class="header__menu-lang">
-        Русский
-      </div>
     </div>
   </header>
 
@@ -176,16 +177,6 @@
         <li class="footer__menu-list-item">
           <a class="footer__menu-list-link" href="./">
             <span>Создатели</span>
-          </a>
-        </li>
-        <li class="footer__menu-list-item">
-          <a class="footer__menu-list-link" href="./">
-            <span>Форма обратной связи</span>
-          </a>
-        </li>
-        <li class="footer__menu-list-item">
-          <a class="footer__menu-list-link" href="./">
-            <span>Русский</span>
           </a>
         </li>
       </ul>

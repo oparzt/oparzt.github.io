@@ -1,0 +1,1 @@
+var e=document.querySelector(".main__forks-cont"),t=new PerfectScrollbar(e);e.scrollLeft=(t.contentWidth-t.containerWidth)/2,window.ps=t;

@@ -1,0 +1,958 @@
+extends ./../base
+
+block append vars
+  - var relativeFontPath = "./../";
+  - var relativeImagesPath = "./../";
+  - var relativeCSSPath = "./";
+  - var pathToRoot = "./../";
+  - var title = "Убежище факторианта - Развилки";
+  - var h1Text = "Развилки";
+  - var headerText = "Развилки"
+  - var forksActive = true;
+
+block additionalCSSLinks
+  link(rel="stylesheet", href="./perfect-scrollbar.css")
+
+block content
+  -
+    const forks = [
+      {
+        lines: [],
+        links: [
+          {
+            text: "Начало игры",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good main__fork-link_rocket",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Сюжет",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/1/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Основы управления",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/2/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Физика в игре",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/3/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Подбор локации",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/4/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Добыча угля",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/5/"
+          }
+        ]
+      },
+      {
+        lines: ["1"],
+        links: [
+          {
+            text: "Добыча руды без автоматизации",
+            classText: "main__fork-link main__fork-link_danger main__fork-link-abs-1",
+            href: "./../articles/5/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Энергия с пара",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/6/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Электрические буры и манипуляторы",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/8/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Радар",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/9/"
+          }
+        ]
+      },
+      {
+        lines: ["5"],
+        links: [
+          {
+            text: "Самостоятельное освоение карты",
+            classText: "main__fork-link main__fork-link-abs-5 main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Лаборатории",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good main__fork-link_science",
+            href: "./../articles/10/"
+          }
+        ]
+      },
+      {
+        lines: ["2"],
+        links: [
+          {
+            text: "Порядок исследований",
+            classText: "main__fork-link main__fork-link_good main__fork-link-abs-2",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Автоматизация красных колб",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/11/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Пулемётные турели",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/13/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Каменные блоки и стены",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/14/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Шина",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/15/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Как брать ресурсы с шины",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/16/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Зелёные колбы",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/17/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Электросхемы",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/18/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство красных и зелёных колб",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/19/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Проблемы с производством железа",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/20/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Стальные балки",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/21/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Наводим порядок",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/22/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Нападение на кусак",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/23/"
+          }
+        ]
+      },
+      {
+        lines: ["3"],
+        links: [
+          {
+            text: "Уничтожение всех кусак в округе",
+            classText: "main__fork-link main__fork-link_warning main__fork-link-abs-3",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: ["6"],
+        links: [
+          {
+            text: "Не убивать кусак",
+            classText: "main__fork-link main__fork-link_warning main__fork-link-abs-6",
+            href: ""
+          },
+          {
+            text: "Расширение шины и отсыпка территории",
+            classText: "main__fork-link main__fork-link_static  main__fork-link_good",
+            href: "./../articles/24/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Добыча нефти",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/26/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство серы",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/27/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство пластика",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/28/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Улучшенные электросхемы",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/29/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Твердотопливные двигатели",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/30/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Синие колбы",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/31/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство патронов",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/32/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство гранат",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/33/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Чёрные колбы",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/34/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство серной кислоты",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: "./../articles/35/"
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство аккумуляторов",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство смазочной жидкости",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство электродвигателя",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство каркаса дрона",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство строительных и транспортных дронов",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: ["7"],
+        links: [
+          {
+            text: "Постройка объектов самостоятельно",
+            classText: "main__fork-link main__fork-link-abs-7 main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Улучшенные конвейеров",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство процессоров",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Завод по производству всего. Часть 1",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство взрывчатки",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: ["8"],
+        links: [
+          {
+            text: "Оставить ландшафт естественным",
+            classText: "main__fork-link main__fork-link-abs-8 main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство солнечных панелей",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство аккумуляторного блока",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство подстанции",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство электрических печей",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: ["9"],
+        links: [
+          {
+            text: "Переплавка на стальных печах",
+            classText: "main__fork-link main__fork-link-abs-9 main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Поезд",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: ["4"],
+        links: [
+          {
+            text: "Трубы вместо поезда",
+            classText: "main__fork-link main__fork-link-abs-4 main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Фиолетовые колбы",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Жёлтые колбы",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Добыча урана",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство бетона",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Переработка урана",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Завод по производству всего. Часть 2",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство дронстанции",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство сборочных комплексов",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство быстрых конвейеров",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство самых быстрых конвейеров",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Обогащение урана",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Автоматический ремонт базы",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство твёрдого топлива",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Маяк",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Массовое улучшение дронами",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Ракетное топливо",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Автомобиль",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: ["10", "11"],
+        links: [
+          {
+            text: "Передвижение пешком",
+            classText: "main__fork-link main__fork-link-abs-10 main__fork-link_good",
+            href: ""
+          },
+          {
+            text: "Передвижение на поезде",
+            classText: "main__fork-link main__fork-link-abs-11 main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Производство крупнокалиберных снарядов",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Огнемёт",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: ["13"],
+        links: [
+          {
+            text: "Оставить пулемётные турели",
+            classText: "main__fork-link main__fork-link-abs-13 main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Танк",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: ["10", "11", "12"],
+        links: [
+          {
+            text: "Передвижение пешком",
+            classText: "main__fork-link main__fork-link-abs-10 main__fork-link_good",
+            href: ""
+          },
+          {
+            text: "Передвижение на автомобиле",
+            classText: "main__fork-link main__fork-link-abs-11 main__fork-link_good",
+            href: ""
+          },
+          {
+            text: "Передвижение на поезде",
+            classText: "main__fork-link main__fork-link-abs-12 main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Ядерное топливо",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Урановый топливный элемент",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Ядерный реактор",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Ядерная энергетика. Часть 1",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Ядерная энергетика. Часть 2",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Ядерная энергетика. Часть 3",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Ядерная энергетика. Часть 4",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Ядерная энергетика. Часть 5",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Завод по производству всего. Часть 3",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Мины",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      {
+        lines: [],
+        links: [
+          {
+            text: "Ракета",
+            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            href: ""
+          }
+        ]
+      },
+      
+      
+      
+    ]
+  
+  div.main__forks-cont
+    div.main__forks-inner-cont
+      div.main__forks-legend
+        div.main__forks-legend-item
+          img(src=relativeImagesPath + "images/danger.svg" alt="Знак тревоги")
+          span Не стоит так делат
+        div.main__forks-legend-item
+          img(src=relativeImagesPath + "images/warning.svg" alt="Знак предупреждения")
+          span Спорные развилки
+
+      each fork in forks
+        div.main__fork
+          each line in fork.lines
+            span(class="main__fork-line main__fork-line-" + line)
+          each link in fork.links
+            a(class=link.classText, href=link.href)
+              span #{link.text}
+      
+
+
+
+
+block additionalJSLinks
+  script(src="./perfect-scrollbar.min.js")
+  script(src="./index.js") 

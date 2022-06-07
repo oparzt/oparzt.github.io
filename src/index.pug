@@ -1,0 +1,78 @@
+extends base
+
+
+block append vars
+  - var title = "Убежище факторианта";
+  - var h1Text = "Главная страница";
+  - var headerText = "Убежище факторианта"
+  - var pathToRoot = "./";
+
+block content
+  - 
+    const imgContImages = [
+      {
+        srcText: relativeImagesPath + "images/red.svg",
+        classText:  "main__red-line",
+        altText: "Красная пунктирная линия"
+      },
+      {
+        srcText: relativeImagesPath + "images/yellow.svg",
+        classText:  "main__yellow-line",
+        altText: "Желтая пунктирная линия"
+      },
+      {
+        srcText: relativeImagesPath + "images/green.svg",
+        classText:  "main__green-line",
+        altText: "Зеленая пунктирная линия"
+      },
+      {
+        srcText: relativeImagesPath + "images/funnel.png",
+        classText:  "main__funnel",
+        altText: "Воронка, в которую падают микросхемы желтого, красного и зелёного цвета"
+      },
+      {
+        srcText: relativeImagesPath + "images/red-mob.svg",
+        classText:  "main__red-line-mob",
+        altText: "Красная пунктирная линия"
+      },
+      {
+        srcText: relativeImagesPath + "images/yellow-mob.svg",
+        classText:  "main__yellow-line-mob",
+        altText: "Желтая пунктирная линия"
+      },
+      {
+        srcText: relativeImagesPath + "images/green-mob.svg",
+        classText:  "main__green-line-mob",
+        altText: "Зеленая пунктирная линия"
+      },
+      {
+        srcText: relativeImagesPath + "images/funnel-mob.png",
+        classText:  "main__funnel-mob",
+        altText: "Воронка, в которую падают микросхемы желтого, красного и зелёного цвета"
+      },
+    ]
+    
+  h2.main__header
+    |  На нашем сайте вы можете 
+    br
+    |  ознакомиться c различными 
+    br
+    |  путями прохождения 
+    br
+    |  игры факторио 
+
+  div.main__img-cont
+    each item in imgContImages
+      img(src=item.srcText, class=item.classText, alt=item.altText)
+
+  .div.main__forks
+    a(href=pathToRoot + "/forks/", class="main__forks-link main__forks-link-danger")
+      img.main__forks-img(src="./images/danger-end.jpg" alt="Много ульев кусак")
+      span.main__forks-txt Опасная развилка
+    a(href=pathToRoot + "/forks/", class="main__forks-link main__forks-link-warning")
+      img.main__forks-img(src="./images/warning-end.jpg" alt="Разбитая ракета")
+      span.main__forks-txt Спорная развилка
+    a(href=pathToRoot + "/forks/", class="main__forks-link")
+      img.main__forks-img(src="./images/good-end.jpg" alt="Запуск ракеты")
+      span.main__forks-txt Хорошая развилка
+  

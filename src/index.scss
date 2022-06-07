@@ -3,6 +3,7 @@
 @import './_footer';
 
 $window-container-width: 1920px;
+$window-mob-container-width: 360px;
 $main-color: #000000;
 $main-bg-color: #FFFFFF;
 
@@ -11,9 +12,19 @@ $main-bg-color: #FFFFFF;
   line-height: calc($line-height / $window-container-width * 100vw);
 }
 
+@mixin transformFontToVWMob($font-size, $line-height) {
+  font-size: calc($font-size / $window-mob-container-width * 100vw);
+  line-height: calc($line-height / $window-mob-container-width * 100vw);
+}
+
 @function transformToVW($size) {
   @return calc($size / $window-container-width * 100vw);
 }
+
+@function transformToVWMob($size) {
+  @return calc($size / $window-mob-container-width * 100vw);
+}
+
 
 %flex-center {
   display: flex;
@@ -85,6 +96,13 @@ body {
     transform: rotate(10deg);
   }
 
+  &__red-line-mob,
+  &__yellow-line-mob,
+  &__green-line-mob,
+  &__funnel-mob {
+    display: none;
+  }
+
   &__forks {
     display: flex;
     justify-content: space-between;
@@ -135,4 +153,96 @@ body {
     }
   }
 
+  @media (max-width: 720px) {
+    padding: transformToVWMob(105px) 0 transformToVWMob(40px);
+
+    &__header {
+      @include transformFontToVWMob(20px, 24.38px);
+      color: $main-color;
+      width: 100%;
+      margin: 0 0 transformToVWMob(20px);
+      padding: 0 transformToVWMob(20px);
+    }
+
+    &__img-cont {
+      height: transformToVWMob(290px);
+    }
+
+    &__red-line,
+    &__yellow-line,
+    &__green-line,
+    &__funnel {
+      display: none;
+    }
+
+    &__green-line-mob {
+      position: absolute;
+      display: initial;
+      top: transformToVWMob(230px);
+      left: transformToVWMob(120px);
+      bottom: unset;
+      width: transformToVWMob(46px);
+      height: transformToVWMob(131px);
+    }
+
+    &__red-line-mob {
+      position: absolute;
+      display: initial;
+      top: transformToVWMob(210px);
+      left: transformToVWMob(79.5px);
+      bottom: unset;
+      width: transformToVWMob(175.5px);
+      height: transformToVWMob(491px);
+    }
+
+    &__yellow-line-mob {
+      position: absolute;
+      display: initial;
+      top: transformToVWMob(223px);
+      left: transformToVWMob(176px);
+      bottom: unset;
+      width: transformToVWMob(109px);
+      height: transformToVWMob(297px);
+    }
+
+    &__funnel-mob {
+      position: absolute;
+      display: initial;
+      top: 0;
+      right: 0;
+      width: transformToVWMob(287px);
+      height: transformToVWMob(236.74px);
+    }
+
+    &__forks {
+      justify-content: flex-start;
+      flex-direction: column-reverse;
+      padding: 0 transformToVWMob(20px);
+  
+      &-link {
+        width: transformToVWMob(203px);
+        margin-bottom: transformToVWMob(35px);
+      }
+  
+      &-link-danger::after,
+      &-link-warning::after {
+        width: transformToVWMob(33px);
+        height: transformToVWMob(29px);
+      }
+
+      &-link-warning {
+        align-self: flex-end;
+      }
+
+      &-img {
+        width: transformToVWMob(203px);
+        height: transformToVWMob(126px);
+        margin-bottom: transformToVWMob(10px);
+      }
+  
+      &-txt {
+        @include transformFontToVWMob(13px, 15.85px)
+      }
+    }
+  }
 }

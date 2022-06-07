@@ -1,0 +1,80 @@
+block vars
+  - var relativeFontPath = "./";
+  - var relativeImagesPath = "./";
+  - var relativeCSSPath = "./";
+  - var pathToRoot = "./";
+  - var title = "";
+  - var h1Text = "";
+  - var headerText = ""
+  - var forksActive = false;
+  - var guildesActive = false;
+
+doctype html
+html(lang="ru")
+  meta(charset="UTF-8")
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0")
+  title #{title}
+
+  link(rel="stylesheet", href=relativeCSSPath + "index.css")
+  link(rel="icon", type="image/png", sizes="192*192", href=relativeLogoPath + "images/logo.png")
+
+  block additionalCSSLinks
+
+  style 
+    | @font-face {
+    |  font-family: 'Montserrat';
+    |   font-style: normal;
+    |   font-weight: 600;
+    |   src: local(''),
+    |      url(#{relativeFontPath + 'fonts/montserrat-v24-latin_cyrillic-600.woff2'}) format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    |      url(#{relativeFontPath + 'fonts/montserrat-v24-latin_cyrillic-600.woff'}) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    | }
+    | @font-face {
+    |   font-family: 'Montserrat';
+    |   font-style: normal;
+    |   font-weight: 700;
+    |   src: local(''),
+    |      url(#{relativeFontPath + 'fonts/montserrat-v24-latin_cyrillic-700.woff2'}) format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    |      url(#{relativeFontPath + 'fonts/montserrat-v24-latin_cyrillic-700.woff'}) format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    | }
+  body 
+    h1.visually-hidden #{h1Text}
+
+    header.header 
+      input.visually-hidden(type="checkbox", name="header__check-mob", id="header__check-mob")
+
+      label.header__nav-btn(for="header__check-mob")
+        img.header__nav-btn-burger-icon(src=relativeImagesPath + "images/navbar.svg", alt="Открытие меню навигации")
+
+      span.header__cur-page-name #{headerText}
+
+      a.header__home-link(href=pathToRoot)
+        img.header__logo(src=relativeImagesPath + "images/logo.svg", alt="Логотип")
+        span.header__name Убежище факторианта
+
+      div.header__menu
+        label.header__menu-nav-btn(for="header__check-mob")
+
+        ul.header__menu-list
+          li(class="header__menu-list-item" + forksActive ? " header__menu-list-item_active" : "")
+            a.header__menu-list-link(href=pathToRoot + "forks/")
+              span Развилки
+          li(class="header__menu-list-item" + guildesActive ? " header__menu-list-item_active" : "")
+            a.header__menu-list-link(href=pathToRoot + "guides/")
+              span Гайды
+    
+    main.main
+      block content
+    
+    footer.footer
+      a.footer__home-link(href=pathToRoot)
+        img.footer__logo(src=relativeImagesPath + "images/logo.svg", alt="Логотип")
+        span.footer__name Убежище факторианта
+      div.footer__menu
+        ul.footer__menu-list
+          li.footer__menu-list-item
+            a.footer__menu-list-link(href=pathToRoot)
+              span Создатели
+    
+    block additionalJSLinks

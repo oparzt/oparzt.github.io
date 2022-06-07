@@ -58,7 +58,6 @@ $footer-color: #FFFFFF;
   }
 
   &__menu {
-    width: transformToVW(710px);
     font-weight: 600;
     padding-left: transformToVW(23px);
     @include transformFontToVW(20px, 24.38px);
@@ -94,5 +93,9 @@ $footer-color: #FFFFFF;
       color: $footer-color;
       text-decoration: none;
     }
+  }
+
+  @media (max-width: 720px) {
+    display: none;
   }
 }
