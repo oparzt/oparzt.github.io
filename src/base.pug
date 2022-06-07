@@ -57,10 +57,10 @@ html(lang="ru")
         label.header__menu-nav-btn(for="header__check-mob")
 
         ul.header__menu-list
-          li(class="header__menu-list-item" + forksActive ? " header__menu-list-item_active" : "")
+          li(class="header__menu-list-item" + (forksActive ? " header__menu-list-item_active" : ""))
             a.header__menu-list-link(href=pathToRoot + "forks/")
               span Развилки
-          li(class="header__menu-list-item" + guildesActive ? " header__menu-list-item_active" : "")
+          li(class="header__menu-list-item" + (guildesActive ? " header__menu-list-item_active" : ""))
             a.header__menu-list-link(href=pathToRoot + "guides/")
               span Гайды
     
