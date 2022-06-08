@@ -21,7 +21,10 @@ block content
         links: [
           {
             text: "Начало игры",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good main__fork-link_rocket",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "rocket",
             href: ""
           }
         ]
@@ -31,7 +34,10 @@ block content
         links: [
           {
             text: "Сюжет",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/1/"
           }
         ]
@@ -41,7 +47,10 @@ block content
         links: [
           {
             text: "Основы управления",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/2/"
           }
         ]
@@ -51,7 +60,10 @@ block content
         links: [
           {
             text: "Физика в игре",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/3/"
           }
         ]
@@ -61,7 +73,10 @@ block content
         links: [
           {
             text: "Подбор локации",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/4/"
           }
         ]
@@ -71,7 +86,10 @@ block content
         links: [
           {
             text: "Добыча угля",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/5/"
           }
         ]
@@ -81,12 +99,18 @@ block content
         links: [
           {
             text: "Энергия с пара",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/6/"
           },
           {
             text: "Добыча руды без автоматизации",
-            classText: "main__fork-link main__fork-link_danger main__fork-link-abs-1",
+            posMode: "abs-1",
+            lineDown: "",
+            modificator: "danger",
+            specialSign: "",
             href: "./../articles/5/"
           }
         ]
@@ -96,7 +120,10 @@ block content
         links: [
           {
             text: "Электрические буры и манипуляторы",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/8/"
           }
         ]
@@ -106,7 +133,10 @@ block content
         links: [
           {
             text: "Радар",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/9/"
           }
         ]
@@ -115,19 +145,20 @@ block content
         lines: ["5"],
         links: [
           {
-            text: "Самостоятельное освоение карты",
-            classText: "main__fork-link main__fork-link-abs-5 main__fork-link_good",
-            href: ""
-          }
-        ]
-      },
-      {
-        lines: [],
-        links: [
-          {
             text: "Лаборатории",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good main__fork-link_science",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "science",
             href: "./../articles/10/"
+          },
+          {
+            text: "Самостоятельное освоение карты",
+            posMode: "abs-5",
+            lineDown: "",
+            modificator: "danger-hide",
+            specialSign: "",
+            href: ""
           }
         ]
       },
@@ -135,19 +166,20 @@ block content
         lines: ["2"],
         links: [
           {
-            text: "Порядок исследований",
-            classText: "main__fork-link main__fork-link_good main__fork-link-abs-2",
-            href: ""
-          }
-        ]
-      },
-      {
-        lines: [],
-        links: [
-          {
             text: "Автоматизация красных колб",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/11/"
+          },
+          {
+            text: "Порядок исследований",
+            posMode: "abs-2",
+            lineDown: "",
+            modificator: "warning-hide",
+            specialSign: "",
+            href: ""
           }
         ]
       },
@@ -156,18 +188,32 @@ block content
         links: [
           {
             text: "Пулемётные турели",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/13/"
           }
         ]
       },
       {
-        lines: [],
+        lines: ["24"],
         links: [
           {
             text: "Каменные блоки и стены",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/14/"
+          },
+          {
+            text: "Защита базы самостоятельно",
+            posMode: "abs-24",
+            lineDown: "",
+            modificator: "danger-hide",
+            specialSign: "",
+            href: ""
           }
         ]
       },
@@ -176,7 +222,10 @@ block content
         links: [
           {
             text: "Шина",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/15/"
           }
         ]
@@ -186,7 +235,10 @@ block content
         links: [
           {
             text: "Как брать ресурсы с шины",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/16/"
           }
         ]
@@ -196,7 +248,10 @@ block content
         links: [
           {
             text: "Зелёные колбы",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/17/"
           }
         ]
@@ -206,7 +261,10 @@ block content
         links: [
           {
             text: "Электросхемы",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/18/"
           }
         ]
@@ -216,7 +274,10 @@ block content
         links: [
           {
             text: "Производство красных и зелёных колб",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/19/"
           }
         ]
@@ -226,7 +287,10 @@ block content
         links: [
           {
             text: "Проблемы с производством железа",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/20/"
           }
         ]
@@ -236,7 +300,10 @@ block content
         links: [
           {
             text: "Стальные балки",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/21/"
           }
         ]
@@ -246,7 +313,10 @@ block content
         links: [
           {
             text: "Наводим порядок",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/22/"
           }
         ]
@@ -256,7 +326,10 @@ block content
         links: [
           {
             text: "Нападение на кусак",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/23/"
           }
         ]
@@ -265,34 +338,49 @@ block content
         lines: ["3"],
         links: [
           {
-            text: "Уничтожение всех кусак в округе",
-            classText: "main__fork-link main__fork-link_warning main__fork-link-abs-3",
-            href: ""
-          }
-        ]
-      },
-      {
-        lines: ["6"],
-        links: [
-          {
-            text: "Не убивать кусак",
-            classText: "main__fork-link main__fork-link_warning main__fork-link-abs-6",
-            href: ""
+            text: "Расширение шины и отсыпка территории",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
+            href: "./../articles/24/"
           },
           {
-            text: "Расширение шины и отсыпка территории",
-            classText: "main__fork-link main__fork-link_static  main__fork-link_good",
-            href: "./../articles/24/"
+            text: "Уничтожение всех кусак в округе",
+            posMode: "abs-3",
+            lineDown: "line-down",
+            modificator: "warning-hide",
+            specialSign: "",
+            href: ""
           }
         ]
       },
       {
-        lines: [],
+        lines: ["25"],
         links: [
           {
             text: "Добыча нефти",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/26/"
+          },
+          {
+            text: "Не убивать кусак",
+            posMode: "abs-6",
+            lineDown: "",
+            modificator: "warning-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Создание новой шины",
+            posMode: "abs-25",
+            lineDown: "",
+            modificator: "warning-hide",
+            specialSign: "",
+            href: ""
           }
         ]
       },
@@ -301,7 +389,10 @@ block content
         links: [
           {
             text: "Производство серы",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/27/"
           }
         ]
@@ -311,7 +402,10 @@ block content
         links: [
           {
             text: "Производство пластика",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/28/"
           }
         ]
@@ -321,7 +415,10 @@ block content
         links: [
           {
             text: "Улучшенные электросхемы",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/29/"
           }
         ]
@@ -331,7 +428,10 @@ block content
         links: [
           {
             text: "Твердотопливные двигатели",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/30/"
           }
         ]
@@ -341,7 +441,10 @@ block content
         links: [
           {
             text: "Синие колбы",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/31/"
           }
         ]
@@ -351,7 +454,10 @@ block content
         links: [
           {
             text: "Производство патронов",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/32/"
           }
         ]
@@ -361,7 +467,10 @@ block content
         links: [
           {
             text: "Производство гранат",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/33/"
           }
         ]
@@ -371,7 +480,10 @@ block content
         links: [
           {
             text: "Чёрные колбы",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/34/"
           }
         ]
@@ -381,7 +493,10 @@ block content
         links: [
           {
             text: "Производство серной кислоты",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good",
+            specialSign: "",
             href: "./../articles/35/"
           }
         ]
@@ -391,7 +506,10 @@ block content
         links: [
           {
             text: "Производство аккумуляторов",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -401,7 +519,10 @@ block content
         links: [
           {
             text: "Производство смазочной жидкости",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -411,7 +532,10 @@ block content
         links: [
           {
             text: "Производство электродвигателя",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -421,7 +545,10 @@ block content
         links: [
           {
             text: "Производство каркаса дрона",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -431,7 +558,10 @@ block content
         links: [
           {
             text: "Производство строительных и транспортных дронов",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -440,18 +570,19 @@ block content
         lines: ["7"],
         links: [
           {
-            text: "Постройка объектов самостоятельно",
-            classText: "main__fork-link main__fork-link-abs-7 main__fork-link_good",
-            href: ""
-          }
-        ]
-      },
-      {
-        lines: [],
-        links: [
-          {
             text: "Улучшенные конвейеров",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Постройка объектов самостоятельно",
+            posMode: "abs-7",
+            lineDown: "",
+            modificator: "warning-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -461,7 +592,10 @@ block content
         links: [
           {
             text: "Производство процессоров",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -471,17 +605,31 @@ block content
         links: [
           {
             text: "Завод по производству всего. Часть 1",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
       },
       {
-        lines: [],
+        lines: ["27"],
         links: [
           {
             text: "Производство взрывчатки",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Создание отдельных цепей переработки",
+            posMode: "abs-27",
+            lineDown: "",
+            modificator: "warning-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -490,28 +638,48 @@ block content
         lines: ["8"],
         links: [
           {
-            text: "Оставить ландшафт естественным",
-            classText: "main__fork-link main__fork-link-abs-8 main__fork-link_good",
-            href: ""
-          }
-        ]
-      },
-      {
-        lines: [],
-        links: [
-          {
             text: "Производство солнечных панелей",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Оставить ландшафт естественным",
+            posMode: "abs-8",
+            lineDown: "",
+            modificator: "warning-hide",
+            specialSign: "",
             href: ""
           }
         ]
       },
       {
-        lines: [],
+        lines: ["14", "22"],
         links: [
           {
             text: "Производство аккумуляторного блока",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Ядерное топливо",
+            posMode: "abs-14",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Оставить паровые двигатели",
+            posMode: "abs-22",
+            lineDown: "",
+            modificator: "warning-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -521,7 +689,19 @@ block content
         links: [
           {
             text: "Производство подстанции",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
+            href: ""
+          },
+
+          {
+            text: "Урановый топливный элемент",
+            posMode: "abs-15",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -531,47 +711,84 @@ block content
         links: [
           {
             text: "Производство электрических печей",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
-          }
-        ]
-      },
-      {
-        lines: ["9"],
-        links: [
+          },
           {
-            text: "Переплавка на стальных печах",
-            classText: "main__fork-link main__fork-link-abs-9 main__fork-link_good",
+            text: "Ядерный реактор",
+            posMode: "abs-16",
+            lineDown: "",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
       },
       {
-        lines: [],
+        lines: ["9", "17"],
         links: [
           {
             text: "Поезд",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
-          }
-        ]
-      },
-      {
-        lines: ["4"],
-        links: [
+          },
           {
-            text: "Трубы вместо поезда",
-            classText: "main__fork-link main__fork-link-abs-4 main__fork-link_good",
+            text: "Переплавка на стальных печах",
+            posMode: "abs-9",
+            lineDown: "",
+            modificator: "danger-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Ядерная энергетика. Часть 1",
+            posMode: "abs-17",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
       },
       {
-        lines: [],
+        lines: ["4", "23"],
         links: [
           {
             text: "Фиолетовые колбы",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Трубы вместо поезда",
+            posMode: "abs-4",
+            lineDown: "",
+            modificator: "warning-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Ядерная энергетика. Часть 2",
+            posMode: "abs-18",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Перемещение с помощью конвейеров",
+            posMode: "abs-23",
+            lineDown: "",
+            modificator: "warning-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -581,7 +798,18 @@ block content
         links: [
           {
             text: "Жёлтые колбы",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Ядерная энергетика. Часть 3",
+            posMode: "abs-19",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -591,7 +819,18 @@ block content
         links: [
           {
             text: "Добыча урана",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Ядерная энергетика. Часть 4",
+            posMode: "abs-20",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -601,7 +840,18 @@ block content
         links: [
           {
             text: "Производство бетона",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Ядерная энергетика. Часть 5",
+            posMode: "abs-21",
+            lineDown: "",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -611,7 +861,10 @@ block content
         links: [
           {
             text: "Переработка урана",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -621,17 +874,31 @@ block content
         links: [
           {
             text: "Завод по производству всего. Часть 2",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
       },
       {
-        lines: [],
+        lines: ["28"],
         links: [
           {
             text: "Производство дронстанции",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Создание отдельных цепей переработки",
+            posMode: "abs-28",
+            lineDown: "",
+            modificator: "warning-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -641,7 +908,10 @@ block content
         links: [
           {
             text: "Производство сборочных комплексов",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -651,7 +921,10 @@ block content
         links: [
           {
             text: "Производство быстрых конвейеров",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -661,7 +934,10 @@ block content
         links: [
           {
             text: "Производство самых быстрых конвейеров",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -671,7 +947,10 @@ block content
         links: [
           {
             text: "Обогащение урана",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -681,17 +960,31 @@ block content
         links: [
           {
             text: "Автоматический ремонт базы",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
       },
       {
-        lines: [],
+        lines: ["26"],
         links: [
           {
             text: "Производство твёрдого топлива",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Защита базы стенами",
+            posMode: "abs-26",
+            lineDown: "",
+            modificator: "warning-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -701,7 +994,10 @@ block content
         links: [
           {
             text: "Маяк",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -711,7 +1007,10 @@ block content
         links: [
           {
             text: "Массовое улучшение дронами",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -721,7 +1020,10 @@ block content
         links: [
           {
             text: "Ракетное топливо",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -731,7 +1033,10 @@ block content
         links: [
           {
             text: "Автомобиль",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down-double",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -741,12 +1046,18 @@ block content
         links: [
           {
             text: "Передвижение пешком",
-            classText: "main__fork-link main__fork-link-abs-10 main__fork-link_good",
+            posMode: "abs-10",
+            lineDown:"",
+            modificator: "warning-hide",
+            specialSign: "",
             href: ""
           },
           {
             text: "Передвижение на поезде",
-            classText: "main__fork-link main__fork-link-abs-11 main__fork-link_good",
+            posMode: "abs-11",
+            lineDown:"",
+            modificator: "warning-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -756,7 +1067,10 @@ block content
         links: [
           {
             text: "Производство крупнокалиберных снарядов",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -766,7 +1080,10 @@ block content
         links: [
           {
             text: "Огнемёт",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -775,18 +1092,19 @@ block content
         lines: ["13"],
         links: [
           {
-            text: "Оставить пулемётные турели",
-            classText: "main__fork-link main__fork-link-abs-13 main__fork-link_good",
-            href: ""
-          }
-        ]
-      },
-      {
-        lines: [],
-        links: [
-          {
             text: "Танк",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down-double",
+            modificator: "good-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Оставить пулемётные турели",
+            posMode: "abs-13",
+            lineDown: "",
+            modificator: "warning-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -796,97 +1114,26 @@ block content
         links: [
           {
             text: "Передвижение пешком",
-            classText: "main__fork-link main__fork-link-abs-10 main__fork-link_good",
+            posMode: "abs-10",
+            lineDown: "",
+            modificator: "warning-hide",
+            specialSign: "",
             href: ""
           },
           {
             text: "Передвижение на автомобиле",
-            classText: "main__fork-link main__fork-link-abs-11 main__fork-link_good",
+            posMode: "abs-11",
+            lineDown: "",
+            modificator: "warning-hide",
+            specialSign: "",
             href: ""
           },
           {
             text: "Передвижение на поезде",
-            classText: "main__fork-link main__fork-link-abs-12 main__fork-link_good",
-            href: ""
-          }
-        ]
-      },
-      {
-        lines: [],
-        links: [
-          {
-            text: "Ядерное топливо",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
-            href: ""
-          }
-        ]
-      },
-      {
-        lines: [],
-        links: [
-          {
-            text: "Урановый топливный элемент",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
-            href: ""
-          }
-        ]
-      },
-      {
-        lines: [],
-        links: [
-          {
-            text: "Ядерный реактор",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
-            href: ""
-          }
-        ]
-      },
-      {
-        lines: [],
-        links: [
-          {
-            text: "Ядерная энергетика. Часть 1",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
-            href: ""
-          }
-        ]
-      },
-      {
-        lines: [],
-        links: [
-          {
-            text: "Ядерная энергетика. Часть 2",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
-            href: ""
-          }
-        ]
-      },
-      {
-        lines: [],
-        links: [
-          {
-            text: "Ядерная энергетика. Часть 3",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
-            href: ""
-          }
-        ]
-      },
-      {
-        lines: [],
-        links: [
-          {
-            text: "Ядерная энергетика. Часть 4",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
-            href: ""
-          }
-        ]
-      },
-      {
-        lines: [],
-        links: [
-          {
-            text: "Ядерная энергетика. Часть 5",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "abs-12",
+            lineDown: "",
+            modificator: "warning-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -896,17 +1143,31 @@ block content
         links: [
           {
             text: "Завод по производству всего. Часть 3",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
       },
       {
-        lines: [],
+        lines: ["29"],
         links: [
           {
             text: "Мины",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "line-down",
+            modificator: "good-hide",
+            specialSign: "",
+            href: ""
+          },
+          {
+            text: "Создание отдельных цепей переработки",
+            posMode: "abs-29",
+            lineDown: "",
+            modificator: "warning-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -916,7 +1177,10 @@ block content
         links: [
           {
             text: "Ракета",
-            classText: "main__fork-link main__fork-link_static main__fork-link_good",
+            posMode: "static",
+            lineDown: "",
+            modificator: "good-hide",
+            specialSign: "",
             href: ""
           }
         ]
@@ -941,10 +1205,10 @@ block content
           each line in fork.lines
             span(class="main__fork-line main__fork-line-" + line)
           each link in fork.links
-            a(class=link.classText, href=link.href)
+            a(class="main__fork-link main__fork-link_" + link.posMode + " main__fork-link_" + link.lineDown + " main__fork-link_" + link.modificator + " main__fork-link_" + link.specialSign, href=link.href)
               span #{link.text}
       
-
+block footer
 
 
 

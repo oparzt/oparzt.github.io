@@ -52,12 +52,15 @@ const func = {
     return src('src/**/index.pug')
       .pipe(pug({}))
       .pipe(dest('dist/'))
-    // return src('src/**/*.html')
-    //   .pipe(htmlMinify({
-    //     removeComments: true,
-    //     collapseWhitespace: true
-    //   }))
-    //   .pipe(dest('dist/'))
+  },
+
+  buildSimpleHtml() {
+    return src('src/**/*.html')
+      .pipe(htmlMinify({
+        removeComments: true,
+        collapseWhitespace: true
+      }))
+      .pipe(dest('dist/'))
   },
 
   copyImages() {
@@ -122,6 +125,7 @@ function dev() {
       func.buildDevJS,
       func.buildCSS, 
       func.buildHTML, 
+      func.buildSimpleHtml,
       func.copyFonts, 
       func.copyImages, 
       func.copyVideo,
@@ -133,6 +137,7 @@ function dev() {
 
   watch('src/**/*.js', {delay: 2500}, series(func.buildDevJS));
   watch('src/**/*.scss', {delay: 2500}, series(func.buildCSS));
+  watch('src/**/*.html', {delay: 2500}, series(func.buildSimpleHtml));
   watch('src/**/*.pug', {delay: 2500}, series(func.buildHTML));
   watch('src/images/**/*.*', {delay: 2500}, series(func.copyImages));
 

@@ -67,14 +67,15 @@ html(lang="ru")
     main.main
       block content
     
-    footer.footer
-      a.footer__home-link(href=pathToRoot)
-        img.footer__logo(src=relativeImagesPath + "images/logo.svg", alt="Логотип")
-        span.footer__name Убежище факторианта
-      div.footer__menu
-        ul.footer__menu-list
-          li.footer__menu-list-item
-            a.footer__menu-list-link(href=pathToRoot)
-              span Создатели
+    block footer
+      footer.footer
+        a.footer__home-link(href=pathToRoot)
+          img.footer__logo(src=relativeImagesPath + "images/logo.svg", alt="Логотип")
+          span.footer__name Убежище факторианта
+        div.footer__menu
+          ul.footer__menu-list
+            li.footer__menu-list-item
+              a.footer__menu-list-link(href=pathToRoot)
+                span Создатели
     
     block additionalJSLinks

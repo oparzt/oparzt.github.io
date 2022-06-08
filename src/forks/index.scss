@@ -45,7 +45,7 @@ body {
   font-weight: 600;
 
   @include transformFontToVW(22px, 26.82px);
-  padding: transformToVW(100px) 0;
+  padding: transformToVW(100px) 0 0;
 
   &__forks-cont {
     position: relative;
@@ -67,17 +67,17 @@ body {
   }
 
 
-  &__forks-inner-cont::before {
-    content: "";
-    position: absolute;
-    top: transformToVW(100px);
-    left: 50%;
-    width: transformToVW(8px);
-    height: transformToVW(calc(160px * 89 - 76px));
-    border-right: transformToVW(8px) dashed $main-color;
-    transform: translateX(-50%);
-    z-index: -1;
-  }
+  // &__forks-inner-cont::before {
+    // content: "";
+    // position: absolute;
+    // top: transformToVW(100px);
+    // left: 50%;
+    // width: transformToVW(8px);
+    // height: transformToVW(calc(160px * 89 - 76px));
+    // border-right: transformToVW(8px) dashed $main-color;
+    // transform: translateX(-50%);
+    // z-index: -1;
+  // }
 
   &__forks-legend {
     position: absolute;
@@ -163,6 +163,30 @@ body {
     transform: none;
   }
 
+  &__fork-link_line-down::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: transformToVW(8px);
+    height: transformToVW(160px);
+    border-right: transformToVW(8px) dashed $main-color;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+
+  &__fork-link_line-down-double::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: transformToVW(8px);
+    height: transformToVW(320px);
+    border-right: transformToVW(8px) dashed $main-color;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+
   &__fork-link_good {
     border-color: $orange;
     box-shadow: 0 0 0vw #FF811E;
@@ -173,7 +197,9 @@ body {
   }
 
   &__fork-link_danger::after,
+  &__fork-link_danger-hide::after,
   &__fork-link_warning::after,
+  &__fork-link_warning-hide::after,
   &__fork-link_rocket::after,
   &__fork-link_science::after {
     content: "";
@@ -196,11 +222,13 @@ body {
     transform: translate(-35%, 35%);
   }
 
-  &__fork-link_danger::after {
+  &__fork-link_danger::after,
+  &__fork-link_danger-hide::after {
     background-image: url(./../images/danger.svg);
   }
 
-  &__fork-link_warning::after {
+  &__fork-link_warning::after,
+  &__fork-link_warning-hide::after {
     background-image: url(./../images/warning.svg);
   }
 
@@ -212,11 +240,18 @@ body {
     background-image: url(./../images/microscope.png);
   }
 
+  &__fork-link_good-hide,
+  &__fork-link_warning-hide,
+  &__fork-link_danger-hide {
+    border-color: rgba($color: $main-color, $alpha: 0.65);
+    pointer-events: none;
+  }
+
   &__fork-line {
     position: absolute; 
     bottom: 50%; 
     height: calc(100% + 4.25vw); 
-    border: 0.416vw dashed #C81A1A; 
+    border: 0.416vw dashed $main-color; 
     border-radius: 2.3vw;
     z-index: -1;
   }
@@ -231,7 +266,7 @@ body {
 
   &__fork-line-2 {
     left: 50%; 
-    width: 12.4vw; 
+    width: 24.4vw; 
 
     border-left: none;
     border-bottom: none;
@@ -239,7 +274,7 @@ body {
 
   &__fork-line-3 {
     right: 50%;
-    width: 17vw;
+    width: 31vw;
     
     border-bottom: none; 
     border-right: none;
@@ -247,7 +282,7 @@ body {
 
   &__fork-line-4 {
     right: 50%;
-    width: 13vw;
+    width: 19.5vw;
     
     border-bottom: none; 
     border-right: none;
@@ -255,7 +290,7 @@ body {
 
   &__fork-line-5 {
     right: 50%;
-    width: 17vw;
+    width: 23vw;
     
     border-bottom: none; 
     border-right: none;
@@ -271,7 +306,7 @@ body {
 
   &__fork-line-7 {
     left: 50%; 
-    width: 12.4vw; 
+    width: 27.5vw; 
 
     border-left: none;
     border-bottom: none;
@@ -279,7 +314,7 @@ body {
 
   &__fork-line-8 {
     left: 50%; 
-    width: 12.4vw; 
+    width: 28.5vw; 
 
     border-left: none;
     border-bottom: none;
@@ -287,7 +322,7 @@ body {
 
   &__fork-line-9 {
     left: 50%; 
-    width: 12.4vw; 
+    width: 39vw; 
 
     border-left: none;
     border-bottom: none;
@@ -319,62 +354,207 @@ body {
 
   &__fork-line-13 {
     left: 50%; 
-    width: 32.4vw; 
+    width: 29.4vw; 
 
     border-left: none;
     border-bottom: none;
   }
 
-  &__fork-link-abs-1 {
+  &__fork-line-14 {
+    right: 50%; 
+    width: 24.9vw; 
+
+    border-bottom: none; 
+    border-right: none; 
+  }
+
+  &__fork-line-17 {
+    right: calc(50% + 19.2vw); 
+    width: 24.4vw; 
+
+    border-bottom: none; 
+    border-right: none; 
+  }
+
+  &__fork-line-22 {
+    right: calc(50% + 22vw); 
+    width: 24.2vw; 
+
+    border-bottom: none; 
+    border-right: none; 
+    border-top-right-radius: 0;
+  }
+
+  &__fork-line-23 {
+    left: 50%;
+    width: 25.1vw; 
+
+    border-bottom: none; 
+    border-left: none; 
+  }
+
+  &__fork-line-24 {
+    left: 50%;
+    width: 24.2vw; 
+
+    border-bottom: none; 
+    border-left: none; 
+  }
+
+  &__fork-line-25 {
+    left: 50%;
+    width: 23.1vw; 
+
+    border-bottom: none; 
+    border-left: none; 
+  }
+
+  &__fork-line-26 {
+    left: 50%;
+    width: 24.8vw; 
+
+    border-bottom: none; 
+    border-left: none; 
+  }
+
+  &__fork-line-27 {
+    right: 50%; 
+    width: 28.6vw; 
+
+    border-bottom: none; 
+    border-right: none; 
+  }
+
+  &__fork-line-28 {
+    left: 50%;
+    width: 28.8vw; 
+
+    border-bottom: none; 
+    border-left: none; 
+  }
+
+  &__fork-line-29 {
+    left: 50%;
+    width: 22.8vw; 
+
+    border-bottom: none; 
+    border-left: none; 
+  }
+
+  &__fork-link_abs-1 {
     transform: translateX(-37vw);
   }
 
-  &__fork-link-abs-2 {
+  &__fork-link_abs-2 {
+    transform: translateX(14vw);
+  }
+
+  &__fork-link_abs-3 {
+    transform: translateX(-44vw);
+  }
+
+  &__fork-link_abs-4 {
+    transform: translateX(-29vw);
+  }
+
+  &__fork-link_abs-5 {
+    transform: translateX(-36vw);
+  }
+
+  &__fork-link_abs-6 {
+    transform: translateX(-39vw);
+  }
+
+  &__fork-link_abs-7 {
+    transform: translateX(13vw);
+  }
+
+  &__fork-link_abs-8 {
+    transform: translateX(15vw);
+  }
+
+  &__fork-link_abs-9 {
+    transform: translateX(26vw);
+  }
+
+  &__fork-link_abs-10 {
     transform: translateX(2vw);
   }
 
-  &__fork-link-abs-3 {
-    transform: translateX(-30vw);
-  }
-
-  &__fork-link-abs-4 {
-    transform: translateX(-23vw);
-  }
-
-  &__fork-link-abs-5 {
-    transform: translateX(-30vw);
-  }
-
-  &__fork-link-abs-6 {
-    transform: translateX(-34vw);
-  }
-
-  &__fork-link-abs-7 {
-    transform: translateX(2vw);
-  }
-
-  &__fork-link-abs-8 {
-    transform: translateX(2vw);
-  }
-
-  &__fork-link-abs-9 {
-    transform: translateX(2vw);
-  }
-
-  &__fork-link-abs-10 {
-    transform: translateX(2vw);
-  }
-
-  &__fork-link-abs-11 {
+  &__fork-link_abs-11 {
     transform: translateX(-24vw);
   }
 
-  &__fork-link-abs-12 {
+  &__fork-link_abs-12 {
     transform: translateX(-47vw);
   }
 
-  &__fork-link-abs-13 {
-    transform: translateX(22vw);
+  &__fork-link_abs-13 {
+    transform: translateX(17vw);
+  }
+
+  &__fork-link_abs-14 {
+    transform: translateX(-33vw);
+  }
+
+  &__fork-link_abs-15 {
+    transform: translateX(-37vw);
+  }
+
+  &__fork-link_abs-16 {
+    transform: translateX(-33vw);
+  }
+
+  &__fork-link_abs-17 {
+    transform: translateX(-55vw);
+  }
+
+  &__fork-link_abs-18 {
+    transform: translateX(-55vw);
+  }
+
+  &__fork-link_abs-19 {
+    transform: translateX(-55vw);
+  }
+
+  &__fork-link_abs-20 {
+    transform: translateX(-55vw);
+  }
+
+  &__fork-link_abs-21 {
+    transform: translateX(-55vw);
+  }
+
+  &__fork-link_abs-22 {
+    transform: translateX(-58vw);
+  }
+
+  &__fork-link_abs-23 {
+    transform: translateX(10vw);
+  }
+
+  &__fork-link_abs-24 {
+    transform: translateX(12vw);
+  }
+
+  &__fork-link_abs-25 {
+    transform: translateX(13vw);
+  }
+
+  &__fork-link_abs-26 {
+    transform: translateX(15vw);
+  }
+
+  &__fork-link_abs-27 {
+    transform: translateX(-44vw);
+  }
+
+  &__fork-link_abs-28 {
+    transform: translateX(13vw);
+  }
+
+  &__fork-link_abs-29 {
+    transform: translateX(7vw);
   }
 }
 
