@@ -106,6 +106,7 @@ async function build() {
       func.buildJS, 
       func.buildCSS, 
       func.buildHTML, 
+      func.buildSimpleHtml,
       func.copyFonts, 
       func.copyImages, 
       func.copyVideo,
