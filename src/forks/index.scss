@@ -52,7 +52,6 @@ body {
     width: 100%;
     $padding1: transformToVW(100px);
     height: calc(100vh - #{$padding1});
-    // height: сalc(100vh - 0.53333vw);
 
     overflow: hidden;
   }
@@ -622,6 +621,11 @@ body {
       border-right: transformToVWMob(2.95px) dashed $main-color;
     }
 
+    &__fork-link_good {
+      border-color: $orange;
+      box-shadow: 0 0 0vw #FF811E;
+    }
+
     &__fork-link_good:hover {
       box-shadow: 0 0 0.5vw #FF811E;
     }
@@ -640,6 +644,13 @@ body {
     &__fork-link_science::after {
       width: transformToVWMob(20px);
       height: transformToVWMob(20px);
+    }
+
+    &__fork-link_good-hide,
+    &__fork-link_warning-hide,
+    &__fork-link_danger-hide {
+      border-color: rgba($color: $main-color, $alpha: 0.65);
+      pointer-events: none;
     }
     
     &__fork-line {
