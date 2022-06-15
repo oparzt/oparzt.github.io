@@ -5,7 +5,213 @@ block append vars
   - var relativeImagesPath = "./../";
   - var relativeCSSPath = "./";
   - var pathToRoot = "./../";
-  - var title = "Убежище факторианта - Развилки";
-  - var h1Text = "Развилки";
-  - var headerText = "Развилки"
+  - var title = "Убежище факторианта - Гайды";
+  - var h1Text = "Гайды";
+  - var headerText = "Гайды"
   - var guidesActive = true;
+
+block content
+  -
+    var articles = [
+      {
+        articleFolder: "./1/",
+        img: "./images/warning-end.jpeg",
+        linkClass: "",
+        text: "Сюжет"
+      },
+      {
+        articleFolder: "./2/",
+        img: "./images/good-end.jpeg",
+        linkClass: "",
+        text: "Основы управления"
+      },
+      {
+        articleFolder: "./3/",
+        img: "./images/good-end.jpeg",
+        linkClass: "",
+        text: "Физика в игре"
+      },
+      {
+        articleFolder: "./4/",
+        img: "./images/articles/4/3.png",
+        linkClass: "",
+        text: "Подбор локации"
+      },
+      {
+        articleFolder: "./5/",
+        img: "./images/articles/5/2.png",
+        linkClass: "",
+        text: "Добыча угля"
+      },
+      {
+        articleFolder: "./6/",
+        img: "./images/articles/6/1.png",
+        linkClass: "",
+        text: "Энергия с пара"
+      },
+      {
+        articleFolder: "./8/",
+        img: "./images/articles/8/4.png",
+        linkClass: "",
+        text: "Электрические буры и манипуляторы"
+      },
+      {
+        articleFolder: "./9/",
+        img: "./images/articles/9/6.png",
+        linkClass: "",
+        text: "Радар"
+      },
+      {
+        articleFolder: "./10/",
+        img: "./images/articles/10/3.png",
+        linkClass: "",
+        text: "Лаборатории"
+      },
+      {
+        articleFolder: "./11/",
+        img: "./images/articles/11/5.png",
+        linkClass: "",
+        text: "Автоматизация красных колб"
+      },
+      {
+        articleFolder: "./13/",
+        img: "./images/articles/13/12.png",
+        linkClass: "",
+        text: "Пулемётные турели"
+      },
+      {
+        articleFolder: "./14/",
+        img: "./images/articles/14/7.png",
+        linkClass: "",
+        text: "Каменные блоки и стены"
+      },
+      {
+        articleFolder: "./15/",
+        img: "./images/articles/15/13.png",
+        linkClass: "",
+        text: "Шина"
+      },
+      {
+        articleFolder: "./16/",
+        img: "./images/articles/16/3.png",
+        linkClass: "",
+        text: "Как брать ресурсы с шины"
+      },
+      {
+        articleFolder: "./17/",
+        img: "./images/articles/17/1.png",
+        linkClass: "",
+        text: "Зелёные колбы"
+      },
+      {
+        articleFolder: "./18/",
+        img: "./images/articles/18/3.png",
+        linkClass: "",
+        text: "Электросхемы"
+      },
+      {
+        articleFolder: "./19/",
+        img: "./images/articles/19/3.png",
+        linkClass: "",
+        text: "Производство красных и зелёных колб"
+      },
+      {
+        articleFolder: "./20/",
+        img: "./images/articles/20/1.png",
+        linkClass: "",
+        text: "Проблемы с производством железа"
+      },
+      {
+        articleFolder: "./21/",
+        img: "./images/articles/21/1.png",
+        linkClass: "",
+        text: "Стальные балки"
+      },
+      {
+        articleFolder: "./22/",
+        img: "./images/articles/22/4.png",
+        linkClass: "",
+        text: "Наводим порядок"
+      },
+      {
+        articleFolder: "./23/",
+        img: "./images/articles/23/2.png",
+        linkClass: "",
+        text: "Нападение на кусак"
+      },
+      {
+        articleFolder: "./24/",
+        img: "./images/articles/24/4.png",
+        linkClass: "",
+        text: "Расширение шины и отсыпка территории"
+      },
+      {
+        articleFolder: "./26/",
+        img: "./images/articles/26/8.png",
+        linkClass: "",
+        text: "Добыча нефти"
+      },
+      {
+        articleFolder: "./27/",
+        img: "./images/articles/27/7.png",
+        linkClass: "",
+        text: "Производство серы"
+      },
+      {
+        articleFolder: "./28/",
+        img: "./images/articles/28/5.png",
+        linkClass: "",
+        text: "Производство пластика"
+      },
+      {
+        articleFolder: "./29/",
+        img: "./images/articles/29/4.png",
+        linkClass: "",
+        text: "Улучшенные электросхемы"
+      },
+      {
+        articleFolder: "./30/",
+        img: "./images/articles/30/3.png",
+        linkClass: "",
+        text: "Твердотопливные двигатели"
+      },
+      {
+        articleFolder: "./31/",
+        img: "./images/articles/31/2.png",
+        linkClass: "",
+        text: "Синие колбы"
+      },
+      {
+        articleFolder: "./32/",
+        img: "./images/articles/32/1.png",
+        linkClass: "",
+        text: "Производство патронов"
+      },
+      {
+        articleFolder: "./33/",
+        img: "./images/articles/33/4.png",
+        linkClass: "",
+        text: "Производство гранат"
+      },
+      {
+        articleFolder: "./34/",
+        img: "./images/articles/34/5.png",
+        linkClass: "",
+        text: "Чёрные колбы"
+      },
+      {
+        articleFolder: "./35/",
+        img: "./images/articles/35/3.png",
+        linkClass: "",
+        text: "Производство серной кислоты"
+      },
+    ]
+  
+  h2 Гайды
+
+  ul 
+    each articleInfo in articles
+      li
+        a(href=pathToRoot + "./articles/" + articleInfo.articleFolder, class=articleInfo.linkClass)
+          img(src=relativeImagesPath + articleInfo.img alt="")
+          span #{articleInfo.text}

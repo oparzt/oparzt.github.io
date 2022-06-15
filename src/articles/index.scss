@@ -3,16 +3,27 @@
 @import './../_footer';
 
 $window-container-width: 1920px;
+$window-mob-container-width: 360px;
 $main-color: #000000;
 $main-bg-color: #FFFFFF;
+
 
 @mixin transformFontToVW($font-size, $line-height) {
   font-size: calc($font-size / $window-container-width * 100vw);
   line-height: calc($line-height / $window-container-width * 100vw);
 }
 
+@mixin transformFontToVWMob($font-size, $line-height) {
+  font-size: calc($font-size / $window-mob-container-width * 100vw);
+  line-height: calc($line-height / $window-mob-container-width * 100vw);
+}
+
 @function transformToVW($size) {
   @return calc($size / $window-container-width * 100vw);
+}
+
+@function transformToVWMob($size) {
+  @return calc($size / $window-mob-container-width * 100vw);
 }
 
 %flex-center {
@@ -180,5 +191,98 @@ body {
     }
   }
 
+  @media (max-width: 720px) {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+  
+    @include transformFontToVWMob(20px, 24.38px);
+    padding: transformToVWMob(100px) transformToVWMob(20px);
+  
+    &__header {
+      margin-bottom: transformToVWMob(25px);
+  
+      &-text {
+        max-width: transformToVWMob(160px);
+        font-weight: 700;
+        @include transformFontToVWMob(20px, 24.38px);
+        margin-right: transformToVWMob(20px);
+      }
+  
+      &-arrow {
+        width: transformToVWMob(47px);
+        height: transformToVWMob(24px);
+      }
+  
+      &-icon {
+        width: transformToVWMob(33px);
+        height: transformToVWMob(29px);
+      }
+    }
+  
+    &__sub-header {
+      @include transformFontToVWMob(20px, 24.38px);
+      margin-top: transformToVWMob(20px);
+      margin-bottom: transformToVWMob(20px);
+    }
+  
+    span {
+      font-weight: 600;
+      @include transformFontToVWMob(20px, 24.38px);
+    }
+  
+    p {
+      margin-bottom: transformToVWMob(15px);
+    }
+  
+    ul {
+      list-style-type: disc;
+      padding-left: transformToVWMob(20px);
+      margin-bottom: transformToVWMob(15px);
+    }
+  
+    li {
+      margin-bottom: transformToVWMob(5px);
+    }
+  
+    &__img-cont {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: transformToVWMob(35px);
+  
+      img {
+        width: 100%;
+      }
+    }
+  
+    &__img_small {
+      width: 100% !important;
+    }
+  
+    &__img_very-small {
+      width: 100% !important;
+    }
+  
+    &__footer {
+      margin-top: transformToVWMob(60px);
+  
+      &-arrow {
+        width: transformToVWMob(47px);
+        height: transformToVWMob(24px);
+      }
+  
+      &-cont {
+        &-link {
+          @include transformFontToVWMob(13px, 15.85px);
+          margin-bottom: transformToVWMob(15px);
+        }
+  
+        &-link:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
 }
 

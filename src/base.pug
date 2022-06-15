@@ -7,7 +7,7 @@ block vars
   - var h1Text = "";
   - var headerText = ""
   - var forksActive = false;
-  - var guildesActive = false;
+  - var guidesActive = false;
 
 doctype html
 html(lang="ru")
@@ -17,7 +17,7 @@ html(lang="ru")
   title #{title}
 
   link(rel="stylesheet", href=relativeCSSPath + "index.css")
-  link(rel="icon", type="image/png", sizes="192*192", href=relativeLogoPath + "images/logo.png")
+  link(rel="icon", type="image/png", sizes="192*192", href=relativeImagesPath + "images/logo.png")
 
   block additionalCSSLinks
 
@@ -60,7 +60,7 @@ html(lang="ru")
           li(class="header__menu-list-item" + (forksActive ? " header__menu-list-item_active" : ""))
             a.header__menu-list-link(href=pathToRoot + "forks/")
               span Развилки
-          li(class="header__menu-list-item" + (guildesActive ? " header__menu-list-item_active" : ""))
+          li(class="header__menu-list-item" + (guidesActive ? " header__menu-list-item_active" : ""))
             a.header__menu-list-link(href=pathToRoot + "guides/")
               span Гайды
     

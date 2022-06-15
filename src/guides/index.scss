@@ -3,16 +3,26 @@
 @import './../_footer';
 
 $window-container-width: 1920px;
-$window-container-width-mob: 450px;
+$window-mob-container-width: 360px;
 $main-color: #202020;
 $gold-color: #d5b869;
+
+@mixin transformFontToVW($font-size, $line-height) {
+  font-size: calc($font-size / $window-container-width * 100vw);
+  line-height: calc($line-height / $window-container-width * 100vw);
+}
+
+@mixin transformFontToVWMob($font-size, $line-height) {
+  font-size: calc($font-size / $window-mob-container-width * 100vw);
+  line-height: calc($line-height / $window-mob-container-width * 100vw);
+}
 
 @function transformToVW($size) {
   @return calc($size / $window-container-width * 100vw);
 }
 
 @function transformToVWMob($size) {
-  @return calc($size / $window-container-width-mob * 100vw);
+  @return calc($size / $window-mob-container-width * 100vw);
 }
 
 %flex-center {
@@ -31,5 +41,99 @@ body {
   position: relative;
   width: 100%;
 
-  padding: transformToVW(140px) transformToVW(330px);
+  padding: transformToVW(170px) transformToVW(330px);
+
+  font-family: "Montserrat", sans-serif;
+  color: $main-color;
+
+  h2 {
+    font-weight: 700;
+    @include transformFontToVW(54px, 65.83px);
+    margin-bottom: transformToVW(60px);
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: transformToVW(75px) transformToVW(75px);
+    list-style: none;
+
+    li {
+      a {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        text-decoration: none;
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include transformFontToVW(22px, 27px);
+        color: inherit;
+
+        img {
+          width: 100%;
+          height: transformToVW(232px);
+          margin-bottom: transformToVW(20px);
+        }
+      }
+    }
+  }
+
+  .danger::after,
+  .warning::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    right: 100%;
+    width: transformToVW(55.99px);
+    height: transformToVW(49px);
+    transform: translate(50%, 50%);
+    background-position: center center;
+    background-size: 100% 100%;
+  }
+
+  .danger::after {
+    background-image: url(./../images/danger.svg);
+  }
+
+  .warning::after {
+    background-image: url(./../images/warning.svg);
+  }
+
+  @media (max-width: 720px) {
+    padding: transformToVWMob(110px) transformToVWMob(75px);
+  
+    font-family: "Montserrat", sans-serif;
+    color: $main-color;
+  
+    h2 {
+      display: none;
+    }
+  
+    ul {
+      grid-template-columns: repeat(1, 1fr);
+      gap: transformToVWMob(40px) 0;
+  
+      li {
+        a {
+          @include transformFontToVWMob(13px, 15.85px);
+  
+          img {
+            height: transformToVWMob(126px);
+            margin-bottom: transformToVWMob(15px);
+          }
+        }
+      }
+    }
+  
+    .danger::after,
+    .warning::after {
+      width: transformToVWMob(33px);
+      height: transformToVWMob(29px);
+    }
+  }
 }

@@ -1,0 +1,92 @@
+extends ./../../base
+
+block append vars
+  - var relativeFontPath = "./../../";
+  - var relativeImagesPath = "./../../";
+  - var relativeCSSPath = "./../";
+  - var pathToRoot = "./../../";
+  - var title = "Убежище факторианта - Основы управления";
+  - var h1Text = "Основы управления";
+  - var headerText = "Статьи"
+  - var forksActive = false;
+  - var guildesActive = false;
+
+block content
+  - 
+    var textArr1 = [
+      `Чтобы не мучить себя и своё драгоценное время, 
+      давайте познакомимся с управлением в игре и уже наконец-то приступим к выживанию.`
+    ];
+
+    var config = [
+      {
+        header: "Базовые",
+        list: [
+          "Shift + Space – пауза;",
+          "W – движение вверх;",
+          "D – движение вправо;",
+          "A – движение влево;",
+          "S – движение вниз;",
+          "ЛКМ – строить;",
+          "ПКМ – добывать;",
+          "Ctrl + клик на здании в зоне досягаемости – сбор ресурсов из здания;",
+          "E – открыть экран персонажа;",
+          "T – открыть технологический экран;",
+          "R – повернуть здание (пипетка);",
+          "P – статистика производства;",
+          "Alt – включение инфо-режима;",
+          "Q – очистить предметы «в руке»;",
+          "Enter – сесть/покинуть транспорт;",
+          "Shift + ПКМ – копировать производство;",
+          "Shift + ЛКМ – применить производство."
+        ]
+      },
+      {
+        header: "Инвентарь",
+        list: [
+          "ЛКМ – взять предмет;",
+          "ПКМ на стаке предметов – разделить пополам, можно подержать и пересыпать больше;",
+          "Shift + ЛКМ – переместить стак;",
+          "Ctrl + ЛКМ – переместить содержимое инвентаря. Быстрое перемещение предметов из/в устройство."
+        ]
+      },
+      {
+        header: "Производство",
+        list: [
+          "ЛКМ – произвести 1;",
+          "ПКМ – произвести 5;",
+          "Shift + ЛКМ – произвести всё (нажать следующие сочетания клавиш ещё раз и производство приостановится)."
+        ]
+      }
+    ]
+
+    var footerLinks = [
+      {
+        href: "./../3/",
+        state: "good",
+        text: "Физика в игре >"
+      }
+    ]
+    
+  div.main__header
+    div.main__header-cont
+      h2.main__header-text #{h1Text}
+      button.main__header-arrow(onclick="window.history.back()" type="button")
+ 
+
+  each text in textArr1
+    p
+      | #{text}
+
+  each curConf in config 
+    h3.main__sub-header #{curConf.header}
+    ul
+      each listItem in curConf.list
+        li #{listItem}
+
+  div.main__footer
+    button.main__footer-arrow(onclick="window.history.back()" type="button")
+
+    div.main__footer-cont
+      each footerLink in footerLinks 
+        a(class="main__footer-cont-link main__footer-cont-link_" + footerLink.state href=footerLink.href) #{footerLink.text}
