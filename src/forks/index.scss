@@ -429,6 +429,22 @@ body {
     border-left: none; 
   }
 
+  &__fork-line-30 {
+    left: 50%;
+    width: 18.4vw; 
+
+    border-bottom: none; 
+    border-left: none; 
+  }
+
+  &__fork-line-31 {
+    right: 50%; 
+    width: 23vw; 
+
+    border-bottom: none; 
+    border-right: none; 
+  }
+
   &__fork-link_abs-1 {
     transform: translateX(-37vw);
   }
@@ -543,6 +559,14 @@ body {
 
   &__fork-link_abs-29 {
     transform: translateX(7vw);
+  }
+
+  &__fork-link_abs-30 {
+    transform: translateX(10vw);
+  }
+
+  &__fork-link_abs-31 {
+    transform: translateX(-32vw);
   }
 
 
@@ -761,6 +785,14 @@ body {
     &__fork-line-29 {
       width: 46.8vw; 
     }
+
+    &__fork-line-30 {
+      width: 35.4vw; 
+    }
+
+    &__fork-line-31 {
+      width: 48vw; 
+    }
   
     &__fork-link_abs-1 {
       transform: translateX(-75vw);
@@ -876,6 +908,14 @@ body {
   
     &__fork-link_abs-29 {
       transform: translateX(14vw);
+    }
+
+    &__fork-link_abs-30 {
+      transform: translateX(18vw);
+    }
+
+    &__fork-link_abs-31 {
+      transform: translateX(-68vw);
     }
   }
 }

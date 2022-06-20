@@ -1,0 +1,53 @@
+extends ./../../base
+
+block append vars
+  - var relativeFontPath = "./../../";
+  - var relativeImagesPath = "./../../";
+  - var relativeCSSPath = "./../";
+  - var pathToRoot = "./../../";
+  - var title = "Убежище факторианта - Случайная карта";
+  - var h1Text = "Случайная карта";
+  - var headerText = "Случайная карта"
+  - var forksActive = false;
+  - var guildesActive = false;
+
+block content
+  - 
+    var footerLinks = []
+    
+  div.main__header
+    div.main__header-cont
+      h2.main__header-text #{h1Text}
+      button.main__header-arrow(onclick="window.history.back()" type="button")
+
+  p Перед началом игры вам доступен выбор карты для дальнейшего прохождения сюжета. Вы можете взять предложенную карту или же выбирать из случайных. Для этого нужно нажать “предпросмотр” и листать карты.
+  
+  div.main__img-cont
+    img(src=relativeImagesPath + "./images/articles/36/1.png", alt="")
+
+  div.main__img-cont
+    img(src=relativeImagesPath + "./images/articles/36/2.png", alt="")
+
+  p Если же вы будете брать первую же карту, не смотря на расположение ресурсов, то вам может попасться что-то такое, как на картинке ниже, и вы на протяжении всего прохождения будете мучиться, и игра может быстро надоесть (если вы не любитель хардкорного прохождения игры). 
+
+  div.main__img-cont
+    img(src=relativeImagesPath + "./images/articles/36/3.png", alt="")
+
+  p Если же вы любите усложнять себе игру, то конечно можете брать первую сгенерированную карту и пытаться её пройти. Но если вы хотите насладиться игрой и сохранить свои нервы в целости и сохранности, то рекомендуется перебрать столько карт, пока не найдёте ту самую, с которой вам будет проходить в кайф. Это может быть 10, 20 или 50 карт. Но лучше найти самую удобную и не мучить себя незачем. 
+  p Так же вы можете скорректировать некоторые настройки и сделать карту под свой уровень сложности.
+  p Например, для тех, кто хочет просто ознакомиться со всеми механиками игры, можно сделать все ресурсы на максимум и больше не беспокоиться об их исчезновении.
+
+  div.main__img-cont
+    img(src=relativeImagesPath + "./images/articles/36/4.png", alt="")
+
+  p Или же добавить лесистости на карту и уже забыть о нехватке древесины.
+
+  div.main__img-cont
+    img(src=relativeImagesPath + "./images/articles/36/5.png", alt="")
+
+  div.main__footer
+    button.main__footer-arrow(onclick="window.history.back()" type="button")
+
+    div.main__footer-cont
+      each footerLink in footerLinks 
+        a(class="main__footer-cont-link main__footer-cont-link_" + footerLink.state href=footerLink.href) #{footerLink.text}
